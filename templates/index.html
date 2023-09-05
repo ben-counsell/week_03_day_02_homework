@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <header><h1>{{ title }}</h1></header>
+        <main>
+            <ul>
+                {% for order in orders %}
+                <li>
+                    <a href="http://127.0.0.1:5000/orders/{{ order.order_number }}" class="link">
+                    <b>Order number:    {{ order.order_number }}</b><br>
+                    Item:               {{ order.item_name }}<br>
+                    Customer:           {{ order.customer_name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </main>
+    </body>
+</html>
